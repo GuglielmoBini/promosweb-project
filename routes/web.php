@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\admin\CompanyController;
+use App\Http\Controllers\admin\SectorController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,10 +25,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-//Route for Companies
+//Route for Companies and Sectors
 Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
     // Code below groups all the CRUD's routes
-    Route::resource('companies', RegistryController::class);
+    Route::resource('companies', CompanyController::class);
+
+    Route::resource('sectors', SectorController::class);
 });
 
 Route::middleware('auth')->group(function () {
