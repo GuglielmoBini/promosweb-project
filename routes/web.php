@@ -27,9 +27,9 @@ Route::get('/dashboard', function () {
 
 //Route for Companies and Sectors
 Route::middleware('auth')->prefix('/admin')->name('admin.')->group(function () {
-    // Code below groups all the CRUD's routes
+    // companies
     Route::resource('companies', CompanyController::class);
-
+    // sectors
     Route::resource('sectors', SectorController::class);
 });
 
