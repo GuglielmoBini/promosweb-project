@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('vat_number', 11)->unique();
             $table->string('tax_id_code', 16);
             $table->string('address', 100);
-            $table->date('activity_start_date');
+            $table->string('activity_start_date');
             $table->char('rating', 1);
             $table->string('chamber_of_commerce')->nullable();
             $table->text('notes')->nullable();
