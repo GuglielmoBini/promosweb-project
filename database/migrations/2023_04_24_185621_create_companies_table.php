@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('business_name', 100);
             $table->string('status', 20);
-            $table->string('sector', 50);
             $table->string('vat_number', 11)->unique();
             $table->string('tax_id_code', 16);
             $table->string('address', 100);
