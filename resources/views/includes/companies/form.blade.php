@@ -25,20 +25,6 @@
                     <small class="text-muted">Scegli la tipologia</small>
                   </div>
             </div>
-            {{-- <div class="col-4">
-                <div class="mb-3">
-                    <label for="sector" class="form-label">Settore</label>
-                    <select class="form-select" id="sector" name="sector">
-                        <option value="">--</option>
-                        <option @if(old('sector', $company->sector) == "Informatica") selected @endif value="Informatica">Informatica</option>
-                        <option @if(old('sector', $company->sector) == "Edilizia") selected @endif value="Edilizia">Edilizia</option>
-                        <option @if(old('sector', $company->sector) == "Immobiliare") selected @endif value="Immobiliare">Immobiliare</option>
-                        <option @if(old('sector', $company->sector) == "Salute") selected @endif value="Salute">Salute</option>
-                        <option @if(old('sector', $company->sector) == "Finanza") selected @endif value="Finanza">Finanza</option>
-                      </select>
-                    <small class="text-muted">Scegli il settore</small>
-                  </div>
-            </div> --}}
             <div class="col-4">
                 <div class="mb-3">
                     <label for="address" class="form-label">Indirizzo</label>
@@ -63,11 +49,11 @@
             <div class="col-4">
                 <div class="mb-3">
                     <label for="activity_start_date" class="form-label">Data inizio attività</label>
-                    <input type="text" class="form-control" id="activity_start_date" name="activity_start_date" value="{{ old('activity_start_date', $company->activity_start_date) }}" placeholder="AAAA-MM-GG" required>
+                    <input type="text" class="form-control" id="activity_start_date" name="activity_start_date" value="{{ old('activity_start_date', $company->activity_start_date) }}" placeholder="GG/MM/AAAA" required>
                     <small class="text-muted">Inserisci data inizio attività</small>
                   </div>
             </div>
-            <div class="col-2">
+            <div class="col-4">
                 <div class="mb-3">
                     <label for="rating" class="form-label">Rating</label>
                     <select class="form-select" id="rating" name="rating">
@@ -82,7 +68,7 @@
                     <small class="text-muted">Scegli il rating</small>
                   </div>
             </div>
-            <div class="col-3">
+            <div class="col-4">
                 <div class="mb-3">
                     <label for="chamber_of_commerce" class="form-label">Carica Visura Catastale</label>
                     <input type="file" class="form-control" id="chamber_of_commerce" name="chamber_of_commerce">
@@ -133,9 +119,6 @@
                     {{$sector->name}}
                 </label>
                 @endforeach
-                @error('sectors')
-                <div class="text-danger">{{$message}}</div>
-                @enderror
             </div>
         </div>
         <div class="d-flex justify-content-center my-3">

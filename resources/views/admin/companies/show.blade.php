@@ -13,14 +13,16 @@
                     <h4 class="card-subtitle text-body-secondary my-4">{{ $company->status }}</h4>
                 </div>
                 <hr>
-              {{-- <div class="card-text mb-3"><strong>Settore: </strong>{{ $company->sector }}</div> --}}
-              <ul class="p-0 m-0 mb-3 list-unstyled">
-                @forelse ($company->sectors as $sector)
-                    <li><strong>Settore:</strong> {{ $sector->name }}</li>
-                @empty
-                    -
-                @endforelse
-              </ul>
+              <div class="d-flex">
+                <strong class="me-2">Settore:</strong>
+                <ul class="p-0 m-0 mb-2 list-unstyled">
+                  @forelse ($company->sectors as $sector)
+                      <li class="badge rounded-pill bg-success py-2 px-3">{{ $sector->name }}</li>
+                  @empty
+                      -
+                  @endforelse
+                </ul>
+              </div>
               <div class="card-text mb-3"><strong>P.IVA: </strong>{{ $company->vat_number }}</div>
               <div class="card-text mb-3"><strong>Codice Fiscale: </strong>{{ $company->tax_id_code }}</div>
               <div class="card-text mb-3"><strong>Data inizio attività: </strong>{{ $company->activity_start_date }}</div>

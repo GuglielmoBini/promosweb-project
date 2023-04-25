@@ -51,7 +51,7 @@
                         <a href="{{ route('admin.companies.show', $company->id) }}" class="btn btn-success">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <a href="{{ route('admin.companies.edit', $company->id) }}" class="btn btn-warning mx-2">
+                        <a href="{{ route('admin.companies.edit', $company->id) }}" class="btn btn-warning mx-3">
                             <i class="fa-solid fa-pencil"></i>
                         </a>
                         <form action="{{ route('admin.companies.destroy', $company->id) }}" method="POST">
