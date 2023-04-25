@@ -15,10 +15,26 @@ class CompanyController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $companies = Company::all();
-        return view('admin.companies.index', compact('companies'));
+        $status_filter = $request->query('status');
+
+
+        $query = Company::all();
+
+        if ($status_filter) {
+            $value = $status_filter === 'Business';
+            $query->where('Business', $value);
+        } else {
+            $value = $status_filter === 'Privato';
+            $query->where('Privato', $value);
+        }
+
+
+
+        $companies = $query;
+
+        return view('admin.companies.index', compact('companies', 'status_filter'));
     }
 
     /**

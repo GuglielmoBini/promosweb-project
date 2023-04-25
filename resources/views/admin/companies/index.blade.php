@@ -4,6 +4,14 @@
     <header>
         <h1 class="my-5">Aziende</h1>
         <a href="{{ route('admin.companies.create') }}" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i> Aggiungi</a>
+        <form action="{{ route('admin.companies.index') }}" method="GET" class="d-flex">
+            <select class="form-select" name="status_filter">
+              <option value="">Tutte</option>
+              <option @if ($status_filter === 'Business') selected @endif value="Business">Business</option>
+              <option @if ($status_filter === 'Privato') selected @endif value="Privato">Privato</option>
+            </select>
+            <button class="btn btn-primary ms-3" type="submit">Filtra</button>
+          </form>
     </header>
     <table class="table">
         <thead>
