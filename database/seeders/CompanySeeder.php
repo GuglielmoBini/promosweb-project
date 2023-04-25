@@ -23,7 +23,7 @@ class CompanySeeder extends Seeder
             $new_company->address = $company['address'];
             $new_company->activity_start_date = $company['activity_start_date'];
             $new_company->rating = $company['rating'];
-            $new_company->chamber_of_commerce = $company['chamber_of_commerce'];
+            // $new_company->chamber_of_commerce = $company['chamber_of_commerce'];
             $new_company->notes = $company['notes'];
             $new_company->email = $company['email'];
             $new_company->phone_number = $company['phone_number'];

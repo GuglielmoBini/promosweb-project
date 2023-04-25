@@ -31,7 +31,7 @@
               <div class="card-text mb-3"><strong>Email: </strong>{{ $company->email }}</div>
               <div class="card-text mb-3"><strong>Telefono: </strong>{{ $company->phone_number }}</div>
               <div class="card-text mb-3"><strong>Username: </strong>{{ $company->username }}</div>
-              <p class="card-text mb-3"><strong>Note: </strong>{{ $company->notes }}.</p>
+              <p class="card-text mb-3"><strong>Note: </strong>@if($company->notes) {{ $company->notes }} @else - @endif</p>
             </div>
           </div>
         <div class="d-flex">
