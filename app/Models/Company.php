@@ -10,7 +10,7 @@ class Company extends Model
     use HasFactory;
 
     // fillable
-    protected $fillable = ['business_name', 'status', 'vat_number', 'tax_id_code', 'activity_start_date', 'rating', 'chamber_of_commerce', 'notes', 'email', 'phone_number', 'username', 'password'];
+    protected $fillable = ['business_name', 'status', 'vat_number', 'tax_id_code', 'address', 'activity_start_date', 'rating', 'chamber_of_commerce', 'notes', 'email', 'phone_number', 'username', 'password'];
 
 
     public function sectors()
