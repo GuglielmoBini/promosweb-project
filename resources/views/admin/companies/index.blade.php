@@ -85,7 +85,7 @@
             @endif 
             @empty
                 <tr>
-                    <th scope="row" colspan="5" class="text-center">Non sono presenti Aziende</th>
+                    <th scope="row" colspan="10" class="text-center">Non sono presenti Aziende</th>
                 </tr>   
             @endforelse            
           </tbody>
