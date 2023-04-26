@@ -2,9 +2,11 @@
 @section('title', 'Dettagli')
 @section('content')
 <section id="detail">
+  {{-- header --}}
     <header>
         <h1 class="my-5">Dettaglio Azienda: </h1>
     </header>
+    {{-- card --}}
     <div class="d-flex flex-column align-items-center">
         <div class="card col-6 mb-4">
             <div class="card-body">
@@ -34,6 +36,7 @@
               <p class="card-text mb-3"><strong>Note: </strong>@if($company->notes) {{ $company->notes }} @else - @endif</p>
             </div>
           </div>
+          {{-- buttons --}}
         <div class="d-flex">
           <a href="{{ route('admin.companies.index') }}" class="btn btn-primary">Torna Indietro</a>
           <a href="{{ route('admin.companies.edit', $company->id) }}" class="btn btn-warning mx-4">

@@ -1,18 +1,27 @@
 @extends('layouts.app')
 @section('title', 'Registro Aziende')
 @section('content')
-    <header>
-        <h1 class="my-5">Aziende</h1>
-        <a href="{{ route('admin.companies.create') }}" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i> Aggiungi</a>
-        <form action="{{ route('admin.companies.index') }}" method="GET" class="d-flex">
+{{-- header --}}
+<header class="d-flex align-items-center justify-content-between">
+    <h1 class="my-5">Posts</h1>
+    <div class="d-flex flex-grow-1 align-items-center justify-content-center">
+        {{-- filter --}}
+      <form action="{{ route('admin.companies.index') }}" method="GET" class="d-flex">
+        <div class="input-group">
+            <button class="btn btn-primary" type="submit">Filtra</button>
             <select class="form-select" name="status_filter">
-              <option value="">Tutte</option>
-              <option @if ($status_filter === 'Business') selected @endif value="Business">Business</option>
-              <option @if ($status_filter === 'Privato') selected @endif value="Privato">Privato</option>
+                <option value="">Tutte</option>
+                <option @if ($status_filter === 'Business') selected @endif value="Business">Business</option>
+                <option @if ($status_filter === 'Privato') selected @endif value="Privato">Privato</option>
             </select>
-            <button class="btn btn-primary ms-3" type="submit">Filtra</button>
-          </form>
-    </header>
+          </div>
+      </form>
+    </div>
+    <a href="{{ route('admin.companies.create') }}" class="btn btn-success ms-3">
+      <i class="fas fa-plus me-2"></i> Crea nuovo
+    </a>
+  </header>
+  {{-- table --}}
     <table class="table">
         <thead>
             <tr class="text-center">
@@ -21,13 +30,13 @@
               <th scope="col">Tipo</th>
               <th scope="col">Settore</th>
               <th scope="col">P. IVA</th>
-              <th scope="col">CF</th>
+              {{-- <th scope="col">CF</th> --}}
               <th scope="col">Indirizzo</th>
-              <th scope="col">Data inizio attività</th>
+              {{-- <th scope="col">Data inizio attività</th> --}}
               <th scope="col">Rating</th>
               <th scope="col">Email</th>
               <th scope="col">Telefono</th>
-              <th scope="col">Username</th>
+              {{-- <th scope="col">Username</th> --}}
               <th></th>
             </tr>
           </thead>
@@ -47,13 +56,14 @@
                     </ul>
                 </td>
                 <td>{{ $company->vat_number }}</td>
-                <td>{{ $company->tax_id_code }}</td>
+                {{-- <td>{{ $company->tax_id_code }}</td> --}}
                 <td>{{ $company->address }}</td>
-                <td>{{ $company->activity_start_date }}</td>
+                {{-- <td>{{ $company->activity_start_date }}</td> --}}
                 <td>{{ $company->rating }}</td>
                 <td>{{ $company->email }}</td>
                 <td>{{ $company->phone_number }}</td>
-                <td>{{ $company->username }}</td>
+                {{-- <td>{{ $company->username }}</td> --}}
+                {{-- buttons --}}
                 <td class="border">
                     <div class="d-flex align-items-center justify-content-center">
                         <a href="{{ route('admin.companies.show', $company->id) }}" class="btn btn-success">

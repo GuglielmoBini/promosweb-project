@@ -7,6 +7,7 @@
     @endif
     @csrf
         <div class="row">
+            {{-- ragione sociale --}}
             <div class="col-9">
                 <div class="mb-3">
                     <label for="business_name" class="form-label">Ragione Sociale</label>
@@ -14,6 +15,7 @@
                     <small class="text-muted">Inserisci la ragione sociale</small>
                   </div>
             </div>
+            {{-- tipo --}}
             <div class="col-3">
                 <div class="mb-3">
                     <label for="status" class="form-label">Tipo</label>
@@ -25,6 +27,7 @@
                     <small class="text-muted">Scegli la tipologia</small>
                   </div>
             </div>
+            {{-- indirizzo --}}
             <div class="col-4">
                 <div class="mb-3">
                     <label for="address" class="form-label">Indirizzo</label>
@@ -32,6 +35,7 @@
                     <small class="text-muted">Inserisci l'indirizzo</small>
                   </div>
             </div>
+            {{-- P.IVA --}}
             <div class="col-4">
                 <div class="mb-3">
                     <label for="vat_number" class="form-label">P.IVA</label>
@@ -39,6 +43,7 @@
                     <small class="text-muted">Inserisci la P.IVA</small>
                   </div>
             </div>
+            {{-- codice fiscale --}}
             <div class="col-4">
                 <div class="mb-3">
                     <label for="tax_id_code" class="form-label">Codice Fiscale</label>
@@ -46,6 +51,7 @@
                     <small class="text-muted">Inserisci il codice fiscale</small>
                   </div>
             </div>
+            {{-- data inizio attività --}}
             <div class="col-4">
                 <div class="mb-3">
                     <label for="activity_start_date" class="form-label">Data inizio attività</label>
@@ -53,6 +59,7 @@
                     <small class="text-muted">Inserisci data inizio attività</small>
                   </div>
             </div>
+            {{-- rating --}}
             <div class="col-4">
                 <div class="mb-3">
                     <label for="rating" class="form-label">Rating</label>
@@ -68,13 +75,15 @@
                     <small class="text-muted">Scegli il rating</small>
                   </div>
             </div>
+            {{-- visura camerale --}}
             <div class="col-4">
                 <div class="mb-3">
-                    <label for="chamber_of_commerce" class="form-label">Carica Visura Catastale</label>
+                    <label for="chamber_of_commerce" class="form-label">Carica Visura Camerale</label>
                     <input type="file" class="form-control" id="chamber_of_commerce" name="chamber_of_commerce">
                     <small class="text-muted">Carica Visura Catastale</small>
                   </div>
             </div>
+            {{-- note --}}
             <div class="col-12">
                 <div class="mb-3">
                     <label for="notes" class="form-label">Note</label>
@@ -82,6 +91,7 @@
                     <small class="text-muted">Inserisci una nota</small>
                   </div>
             </div>
+            {{-- email --}}
             <div class="col-6">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
@@ -89,6 +99,7 @@
                     <small class="text-muted">Inserisci l'Email</small>
                   </div>
             </div>
+            {{-- numero telefono --}}
             <div class="col-6">
                 <div class="mb-3">
                     <label for="phone_number" class="form-label">Numero telefono</label>
@@ -96,6 +107,7 @@
                     <small class="text-muted">Inserisci numero di telefono</small>
                   </div>
             </div>
+            {{-- username --}}
             <div class="col-6">
                 <div class="mb-3">
                     <label for="username" class="form-label">username</label>
@@ -103,6 +115,7 @@
                     <small class="text-muted">Inserisci uno Username</small>
                   </div>
             </div>
+            {{-- password --}}
             <div class="col-6">
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
@@ -110,6 +123,7 @@
                     <small class="text-muted">Inserisci la password</small>
                   </div>
             </div>
+            {{-- settore --}}
             <div class="col-6">
                 <div class="mb-3">Settore</div>
                 @foreach($sectors as $sector)
