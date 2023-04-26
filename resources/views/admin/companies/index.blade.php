@@ -1,10 +1,30 @@
 @extends('layouts.app')
 @section('title', 'Registro Aziende')
 @section('content')
-    <header>
-        <h1 class="my-5">Aziende</h1>
-        <a href="{{ route('admin.companies.create') }}" class="btn btn-success mb-3"><i class="fa-solid fa-plus"></i> Aggiungi</a>
-    </header>
+<header class="d-flex align-items-center justify-content-between">
+    <h1 class="my-5">Posts</h1>
+    <div class="d-flex flex-grow-1 align-items-center justify-content-center">
+      <form action="{{ route('admin.companies.index') }}" method="GET" class="d-flex">
+        <select class="form-select me-3" name="sector_filter" id="sector_filter">
+          <option value="">Tutti i settori</option>
+          @foreach ($sectors as $sector)
+            <option @if ($sector_filter == $sector->id) selected @endif value="{{ $sector->id }}">{{ $sector->name }}
+            </option>
+          @endforeach
+        </select>
+
+        {{-- <select class="form-select" name="status_filter">
+          <option value="">Tutte</option>
+          <option @if ($status_filter === 'published') selected @endif value="published">Pubblicati</option>
+          <option @if ($status_filter === 'drafts') selected @endif value="drafts">Bozze</option>
+        </select> --}}
+        <button class="btn btn-primary ms-3" type="submit">Filtra</button>
+      </form>
+    </div>
+    <a href="{{ route('admin.companies.create') }}" class="btn btn-success ms-3">
+      <i class="fas fa-plus me-2"></i> Crea nuovo
+    </a>
+  </header>
     <table class="table">
         <thead>
             <tr class="text-center">

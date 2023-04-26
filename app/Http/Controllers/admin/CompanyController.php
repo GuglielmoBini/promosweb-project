@@ -15,10 +15,20 @@ class CompanyController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $companies = Company::all();
-        return view('admin.companies.index', compact('companies'));
+        $sector_filter = $request->query('sector__filter');
+        $query = Company::orderBy('id', 'ASC');
+
+        if ($sector_filter) {
+            $query->where('sector_id', $sector_filter);
+        }
+
+        $companies = $query->get();
+        $sectors = Sector::all();
+
+        // $companies = Company::all();
+        return view('admin.companies.index', compact('companies', 'sectors', 'sector_filter'));
     }
 
     /**
