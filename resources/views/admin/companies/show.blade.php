@@ -37,16 +37,16 @@
             </div>
           </div>
           {{-- buttons --}}
-        <div class="d-flex">
+        <div class="d-flex mb-3">
           <a href="{{ route('admin.companies.index') }}" class="btn btn-primary">Torna Indietro</a>
           <a href="{{ route('admin.companies.edit', $company->id) }}" class="btn btn-warning mx-4">
             <i class="fa-solid fa-pencil"></i>
-        </a>
+          </a>
           <form action="{{ route('admin.companies.destroy', $company->id) }}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger" onclick="return confirm('Sei sicuro di voler cancellare questa azienda?')"><i class="fa-solid fa-trash"></i></button>
-        </form>
+          </form>
         </div>
     </div>
   </section>
