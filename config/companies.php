@@ -76,7 +76,7 @@ return [
         'password' => 'password'
     ],
     [
-        'business_name' => 'Masisi s.r.l',
+        'business_name' => 'Masini s.r.l',
         'status' => 'Business',
         'vat_number' => '12345678906',
         'tax_id_code' => '1234567890987480',

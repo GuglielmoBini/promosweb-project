@@ -141,22 +141,3 @@
     </form>
 </div>
 <a href="{{ route('admin.companies.index') }}" class="btn btn-primary my-3">Torna Indietro</a>
-
-{{-- @section('scripts')
-    <script>
-        const placeholder = 'https://marcolanci.it/utils/placeholder.jpg';
-
-        const imageInput = document.getElementById('image_url');
-        const imagePreview = document.getElementById('img-preview');
-
-        imageInput.addEventListener('change', () => {
-            if (imageInput.files && imageInput.files[0]) {
-                const reader = new FileReader();
-                reader.readAsDataURL(imageInput.files[0]);
-                reader.onload = e => {
-                    imagePreview.setAttribute('src', e.target.result);
-                }
-            } else imagePreview.setAttribute('src', placeholder);
-        });
-    </script>
-@endsection --}}
