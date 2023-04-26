@@ -5,8 +5,8 @@
 <header class="d-flex align-items-center justify-content-between">
     <h1 class="my-5">Aziende</h1>
     <div class="d-flex flex-grow-1 align-items-center justify-content-center">
-        {{-- filter --}}
-      <form action="{{ route('admin.companies.index') }}" method="GET" class="d-flex">
+        {{-- filter by status --}}
+      {{-- <form action="{{ route('admin.companies.index') }}" method="GET" class="d-flex">
         <div class="input-group">
             <select class="form-select" name="status_filter">
                 <option value="">Tutte</option>
@@ -14,6 +14,13 @@
                 <option @if ($status_filter === 'Privato') selected @endif value="Privato">Privato</option>
             </select>
             <button class="btn btn-primary" type="submit">Filtra</button>
+          </div>
+      </form> --}}
+      {{-- filter by name --}}
+      <form method="GET" action="{{ route('admin.companies.index') }}">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Cerca per nome azienda" name="search">
+            <button class="btn btn-primary" type="submit">Cerca</button>
           </div>
       </form>
     </div>
@@ -39,6 +46,7 @@
           </thead>
           <tbody>
             @forelse ($companies as $company)
+            @if(count($companies) > 0)
             <tr class="text-center">
                 <th scope="row" class="border-start">{{ $company->id }}</th>
                 <td>{{ $company->business_name }}</td>
@@ -74,10 +82,11 @@
                     </div>
                 </td>
             </tr> 
+            @endif 
             @empty
                 <tr>
                     <th scope="row" colspan="5" class="text-center">Non sono presenti Aziende</th>
-                </tr>
+                </tr>   
             @endforelse            
           </tbody>
     </table>

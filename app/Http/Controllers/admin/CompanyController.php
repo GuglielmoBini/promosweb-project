@@ -17,15 +17,22 @@ class CompanyController extends Controller
      */
     public function index(Request $request)
     {
-        $status_filter = $request->input('status_filter');
+        // filter by status
 
-        if ($status_filter) {
-            $companies = Company::where('status', $status_filter)->get();
-        } else {
-            $companies = Company::all();
-        }
+        // $status_filter = $request->input('status_filter');
 
-        return view('admin.companies.index', compact('companies', 'status_filter'));
+        // if ($status_filter) {
+        //     $companies = Company::where('status', $status_filter)->get();
+        // } else {
+        //     $companies = Company::all();
+        // }
+
+        // filter by name
+
+        $search = $request->input('search');
+        $companies = Company::where('business_name', 'LIKE', '%' . $search . '%')->get();
+
+        return view('admin.companies.index', compact('companies'));
     }
 
     /**
